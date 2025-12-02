@@ -7,3 +7,10 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     container_name: watchtower
+  express-app:
+    container_name: express-app
+    image: waltherbeach/docker-pipeline-exercise
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    ports:
+      - 8080:8080
